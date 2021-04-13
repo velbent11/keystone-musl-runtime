@@ -1,4 +1,9 @@
+ifdef MUSL_RISCV
+CC = riscv$(BITS)-linux-gcc
+else
 CC = riscv$(BITS)-unknown-linux-gnu-gcc
+endif
+
 CFLAGS = -Wall -Werror -fPIC -I.
 
 ASM_SRCS = uaccess.S
@@ -12,6 +17,9 @@ COPY_HEADERS =
 COPY_TARGETS = $(ASM_OBJS) $(COPY_HEADERS)
 
 all: $(ASM_OBJS)
+	@echo "##########velbent#########"
+	@echo "The compiler is $(CC)."
+	@echo "##########################"
 	cp $(COPY_TARGETS) ../
 
 $(ASM_OBJS): $(ASM_SRCS)
