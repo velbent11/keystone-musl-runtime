@@ -1,5 +1,11 @@
+ifdef MUSL_RISCV
+CROSS_COMPILE = riscv$(BITS)-linux-
+CC = $(CROSS_COMPILE)gcc
+else
 CROSS_COMPILE = riscv$(BITS)-unknown-linux-gnu-
 CC = $(CROSS_COMPILE)gcc
+endif
+
 OBJCOPY = $(CROSS_COMPILE)objcopy
 
 
