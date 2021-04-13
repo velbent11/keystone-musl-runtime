@@ -39,6 +39,9 @@ TMPLIB = uaccess.o
 .PHONY: all test copy clean
 
 all: $(RUNTIME) $(TEST_BIN)
+	@echo "##########velbent#########"
+	@echo "The compiler is $(CC)."
+	@echo "##########################"
 
 $(TMPLIB):
 	$(MAKE) -C tmplib
