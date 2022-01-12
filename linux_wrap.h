@@ -2,12 +2,12 @@
 #ifndef _LINUX_WRAP_H_
 #define _LINUX_WRAP_H_
 
-#include <bits/types/sigset_t.h>
-// #define __NEED_sigset_t
-// #include <bits/alltypes.h>
+// #include <bits/types/sigset_t.h>
+#define __NEED_sigset_t
+#include <bits/alltypes.h>
 //增加下面定义
-// typedef int clockid_t;
-// typedef long off_t;
+typedef int clockid_t;
+typedef long off_t;
 #define __off_t off_t
 #define __clockid_t clockid_t
 
